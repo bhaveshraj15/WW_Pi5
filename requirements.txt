@@ -1,2 +1,2 @@
-gpiod
-time
+spidev
+RPi.GPIO
