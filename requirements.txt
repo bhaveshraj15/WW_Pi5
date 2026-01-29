@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 gpiod
 time
 =======
@@ -8,4 +7,3 @@ spidev>=3.6
 numpy>=1.21.0
 matplotlib>=3.5.0
 PyYAML>=6.0
->>>>>>> Stashed changes
