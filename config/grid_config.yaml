@@ -1,0 +1,26 @@
+# config/grid_config.yaml
+grid:
+  rows: 6
+  cols: 6
+  motors_per_pico: 12
+  total_picos: 3
+
+spi:
+  bus: 0
+  device: 0
+  speed_hz: 1000000
+  mode: 0
+  cs_pins: [5, 7, 22]  # GPIO pins for Pico CS lines
+
+motor_limits:
+  min_pulse_us: 1000
+  max_pulse_us: 2000
+  safe_pulse_us: 1000
+
+logging:
+  spi_packets: true
+  pwm_states: true
+  grid_commands: true
+  pattern_execution: true
+  database_path: "logs/motor_grid.db"
+  csv_prefix: "session_"
