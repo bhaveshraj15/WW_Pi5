@@ -19,7 +19,7 @@ from core.grid_manager import MotorGridManager
 from patterns.waveforms import WaveformGenerator
 from patterns.executor import PatternExecutor
 from utils.loggers import DatabaseLogger, CSVLogger
-from utils.visualizer import GridVisualizer
+# from utils.visualizer import GridVisualizer
 
 class MotorGridController:
     """Main controller application"""
@@ -158,8 +158,8 @@ class MotorGridController:
                     print("All motors set to idle")
                 elif cmd == 'show':
                     self._show_grid()
-                elif cmd == 'viz':
-                    self._visualize_grid()
+                # elif cmd == 'viz':
+                #     self._visualize_grid()
                 elif cmd == 'test':
                     self.test_individual_motors()
                 elif cmd == 'demo':
@@ -203,14 +203,14 @@ class MotorGridController:
             row = [f"{grid_array[y, x]:.2f}" for x in range(self.grid.cols)]
             print("  " + " ".join(row))
     
-    def _visualize_grid(self):
-        """Create visualization of current grid"""
-        grid_array = self.grid.get_grid_array('intensity')
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    # def _visualize_grid(self):
+    #     """Create visualization of current grid"""
+    #     grid_array = self.grid.get_grid_array('intensity')
+    #     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         
-        # Save visualization
-        save_path = f"logs/grid_viz_{timestamp}.png"
-        GridVisualizer.plot_grid(grid_array, "Current Motor Grid", save_path=save_path)
+    #     # Save visualization
+    #     save_path = f"logs/grid_viz_{timestamp}.png"
+    #     GridVisualizer.plot_grid(grid_array, "Current Motor Grid", save_path=save_path)
     
     def _print_help(self):
         """Print command help"""
@@ -218,7 +218,7 @@ class MotorGridController:
         print("  set x y intensity   - Set motor at (x,y) to intensity (0.0-1.0)")
         print("  idle                - Set all motors to idle/safe")
         print("  show                - Show current grid state")
-        print("  viz                 - Create visualization")
+        # print("  viz                 - Create visualization")
         print("  test                - Run individual motor test")
         print("  demo                - Run pattern demo")
         print("  exit                - Exit interactive mode")
